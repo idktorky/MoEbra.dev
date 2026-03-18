@@ -67,33 +67,6 @@ magneticBtns.forEach(btn => {
         this.style.transform = `translate(0px, 0px)`;
     });
 });
-const contactForm = document.querySelector('form');
-if(contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault(); // منع الصفحة من التحميل
-        
-        const formData = new FormData(this);
-        
-        fetch(this.action, {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'Accept': 'application/json'
-            }
-        }).then(response => {
-            if (response.ok) {
-                Swal.fire({
-                    title: 'تم تسجيل البيانات!',
-                    text: 'شكراً لتواصلك , هرد عليك في أقرب وقت.',
-                    icon: 'success',
-                    background: '#0a0e17',
-                    color: '#fff',
-                    confirmButtonColor: '#00d2ff'
-                });
-                this.reset(); // فضي الفورم بعد الإرسال
-            }
-        });
-    });
 }
 
 window.addEventListener("scroll", reveal);
