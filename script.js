@@ -67,7 +67,6 @@ magneticBtns.forEach(btn => {
         this.style.transform = `translate(0px, 0px)`;
     });
 });
-}
 
 window.addEventListener("scroll", reveal);
 
