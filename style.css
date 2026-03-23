@@ -110,14 +110,17 @@
 
 /* 1. الداشبورد (بنفسجي نيون) */
 .dashboard-btn {
+    display: flex !important; /* تأكيد الظهور */
+    align-items: center;
+    gap: 8px;
     color: #a855f7;
     background: rgba(168, 85, 247, 0.05);
     border-color: rgba(168, 85, 247, 0.3);
-    visibility: visible;
 }
-.dashboard-btn:hover {
-    background: rgba(168, 85, 247, 0.2);
-    box-shadow: 0 0 15px rgba(168, 85, 247, 0.5);
+
+.dashboard-btn i {
+    display: inline-block !important; /* تأكيد ظهور الأيقونة نفسها */
+    visibility: visible !important;
 }
 
 /* 2. العقارات (ذهبي ملكي) */
