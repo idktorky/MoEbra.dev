@@ -113,7 +113,6 @@
     color: #a855f7;
     background: rgba(168, 85, 247, 0.05);
     border-color: rgba(168, 85, 247, 0.3);
-    visibility: hidden;
 }
 .dashboard-btn:hover {
     background: rgba(168, 85, 247, 0.2);
