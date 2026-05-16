@@ -77,6 +77,7 @@
 
 /* تنسيق موحد لكل زراير الهيدر */
 .nav-actions {
+    visibility: hidden !important; 
     display: flex;
     gap: 12px;
     position: absolute;
