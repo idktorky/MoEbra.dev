@@ -111,6 +111,7 @@
 
 /* 1. الداشبورد (بنفسجي نيون) */
 .dashboard-btn {
+    visibility: hidden !important; /* تأكيد ظهور الزرار */
     display: flex !important; /* تأكيد الظهور */
     align-items: center;
     gap: 8px;
@@ -120,6 +121,7 @@
 }
 
 .dashboard-btn i {
+    vissibility: hidden !important; /* تأكيد إخفاء الأيقونة */
     display: inline-block !important; /* تأكيد ظهور الأيقونة نفسها */
     visibility: visible !important;
 }
