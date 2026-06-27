@@ -68,6 +68,31 @@ magneticBtns.forEach(btn => {
     });
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // 1. إزالة كلاس active من الزر النشط حالياً وإضافته للزر المكبوس
+            document.querySelector('.filter-btn.active').classList.remove('active');
+            button.classList.add('active');
+
+            // 2. جلب نوع الفلتر المختار
+            const filterValue = button.getAttribute('data-filter');
+
+            // 3. فلترة الكروت بناءً على الكلاس الخاص بها
+            projectCards.forEach(card => {
+                if (filterValue === 'all' || card.classList.contains(filterValue)) {
+                    card.classList.remove('hide');
+                } else {
+                    card.classList.add('hide');
+                }
+            });
+        });
+    });
+});
+
 window.addEventListener("scroll", reveal);
 
 

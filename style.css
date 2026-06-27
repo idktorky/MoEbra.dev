@@ -742,31 +742,44 @@ html{
     text-align: left;
 }
 
+/* حاوية قسم المشاريع */
 .projects-section {
     padding: 100px 0;
-    background: linear-gradient(to bottom, #0f0f0f 0%, #0a1118 50%, #2c5364 100%);
+    background: linear-gradient(to bottom, #0f0f0f 0%, #0a1118 50%, #1a2332 100%); /* smooth transition to contact section */
     position: relative;
     padding-bottom: 150px;
 }
-.projects-section::after
 
+/* شبكة عرض المشاريع */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* ضبط مرن ومناسب للشاشات */
     gap: 30px;
 }
 
+/* كارت المشروع المعدل */
 .project-card {
-    background: rgba(255, 255, 255, 0.02);
+    background: rgba(255, 255, 255, 0.03);
     border-radius: 20px;
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: 0.4s;
+    backdrop-filter: blur(10px);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+                box-shadow 0 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+                border-color 0.4s;
 }
 
+/* تأثير عند تمرير الماوس على الكارت (يرتفع ويوهج باللبني) */
+.project-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(0, 210, 255, 0.3);
+    box-shadow: 0 15px 35px rgba(0, 210, 255, 0.15);
+}
+
+/* حاوية الصورة */
 .project-img {
     position: relative;
-    height: 220px;
+    height: 240px; /* زيادة الارتفاع قليلاً ليعطي مساحة تفاصيل أكبر */
     overflow: hidden;
 }
 
@@ -774,68 +787,104 @@ html{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: 0.5s;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.project-card:hover .project-img img {
+    transform: scale(1.08); /* زوم خفيف وناعم */
+}
 
+/* الـ Overlay الاحترافي الجديد (تدرج غامق سينمائي بدلاً من اللون المصمت) */
 .project-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 210, 255, 0.8); 
+    background: linear-gradient(to top, rgba(10, 17, 24, 0.95) 0%, rgba(10, 17, 24, 0.4) 100%); 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     opacity: 0;
-    transition: 0.4s;
-    backdrop-filter: blur(5px);
+    transition: opacity 0.4s ease;
+    backdrop-filter: blur(4px);
+    padding: 20px;
 }
 
 .project-card:hover .project-overlay {
     opacity: 1;
 }
 
-.project-card:hover .project-img img {
-    transform: scale(1.1);
+/* تنسيق الـ Tags لو كنت مستخدمها داخل الـ Overlay */
+.project-tags {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
+.project-tags span {
+    font-size: 0.75rem;
+    background: rgba(0, 210, 255, 0.1);
+    color: #00d2ff;
+    padding: 5px 12px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 210, 255, 0.2);
+}
+
+/* زرار العرض (View Button) بشكل متناسق مع النيون */
 .view-btn {
-    padding: 10px 20px;
-    background: #fff;
+    padding: 12px 28px;
+    background: #00d2ff;
     color: #000;
     text-decoration: none;
     border-radius: 50px;
-    font-weight: bold;
+    font-weight: 600;
+    font-size: 0.9rem;
     margin-top: 15px;
-    transition: 0.3s;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0, 210, 255, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .view-btn:hover {
-    background: #0f0f0f;
-    color: #fff;
+    background: #fff;
+    color: #000;
+    box-shadow: 0 4px 25px rgba(255, 255, 255, 0.5);
+    transform: scale(1.05);
 }
 
+/* معلومات المشروع أسفل الكارت */
 .project-info {
-    padding: 20px;
+    padding: 25px 20px;
     text-align: right;
+    background: rgba(10, 17, 24, 0.5); /* عزل خفيف لمنطقة النصوص */
 }
 
 .project-info h3 {
+    color: #fff; /* جعل العنوان باللون الأبيض ليكون مريحاً ومستقراً */
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+/* عند تمرير الماوس على الكارت، يضيء عنوان المشروع باللبني */
+.project-card:hover .project-info h3 {
     color: #00d2ff;
-    margin-bottom: 10px;
 }
 
 .project-info p {
-    color: #ccc;
-    font-size: 0.9rem;
+    color: #9ca3af; /* درجة رمادي ناعمة ومريحة للعين */
+    font-size: 0.88rem;
     line-height: 1.6;
+    margin: 0;
 }
 
 .contact-section {
-    background: linear-gradient(to top, #0f0f0f 0%, #0a1118 50%, #2c5364 100%);
+    background: linear-gradient(to top, #2c5364 0%, #0a1118 50%, #0f0f0f 100%);
     position: relative;
     overflow: hidden;
     padding-bottom: 200px;
@@ -987,3 +1036,76 @@ html{
     transform: scale(1.2);
 }
 
+/* حاوية أزرار الفلترة */
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: -10px 0 40px 0; /* متناسقة أسفل عنوان القسم */
+    flex-wrap: wrap;
+}
+
+/* تصميم الأزرار الاحترافي */
+.filter-btn {
+    background: linear-gradient(135deg, rgba(255,255,255,0.02), rgba(0,210,255,0.03));
+    color: #dbefff;
+    border: 1px solid rgba(0,210,255,0.12);
+    padding: 10px 26px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 40px;
+    transition: transform 0.25s cubic-bezier(0.2,0.9,0.2,1), box-shadow 0.25s, background 0.25s, color 0.25s;
+    backdrop-filter: blur(6px);
+    position: relative;
+    overflow: visible;
+    box-shadow: 0 6px 18px rgba(2,6,23,0.6);
+}
+
+/* تأثير الـ Hover وعندما يكون الزر نشطاً */
+.filter-btn::after{
+    content: "";
+    position: absolute;
+    inset: -6px;
+    border-radius: 40px;
+    background: radial-gradient(circle at center, rgba(0,210,255,0.12), transparent 35%);
+    filter: blur(8px);
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.filter-btn:hover{
+    transform: translateY(-4px) scale(1.02);
+    color: #dbefff; /* keep light text on hover so it remains visible */
+    box-shadow: 0 10px 30px rgba(0,210,255,0.12);
+}
+
+.filter-btn:hover::after{
+    opacity: 0.25;
+    transform: scale(1.01);
+}
+
+.filter-btn.active{
+    background: linear-gradient(90deg,#00d2ff,#31a8ff);
+    color: #001018;
+    border-color: #00d2ff;
+    box-shadow: 0 8px 30px rgba(0,210,255,0.28);
+}
+
+.filter-btn.active::after{
+    opacity: 1;
+    transform: scale(1.02);
+}
+
+.filter-btn:focus{
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(0,210,255,0.08);
+}
+
+/* كلاس الإخفاء للمشاريع غير المحددة */
+.project-card.hide {
+    display: none !important;
+}
