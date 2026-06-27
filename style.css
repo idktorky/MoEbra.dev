@@ -720,27 +720,139 @@ html{
 
 .service-box {
     margin-top: 30px;
-    padding: 40px;
-    background: linear-gradient(to bottom, #1a1a1a, #121212);
-    border-radius: 25px;
-    border-right: 5px solid #00d2ff; 
-    box-shadow: -10px 10px 20px rgba(0,0,0,0.3);
-    text-align: left; 
+    padding: 28px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border-radius: 20px;
+    border: 1px solid rgba(0,210,255,0.07);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.45), inset 0 -6px 30px rgba(0,210,255,0.02);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    align-items: start;
+    text-align: right;
+    position: relative;
+    overflow: hidden;
 }
 
-.service-box h3 {
-    color: #00d2ff;
-    font-size: 1.8rem;
-    margin-bottom: 15px;
+.service-header h3{
+    color: var(--neon-color);
+    font-size: 1.6rem;
+    margin-bottom: 6px;
+}
+.service-sub{
+    color: #cfd8dc;
+    font-size: 0.98rem;
+    margin-bottom: 4px;
+}
+
+.service-list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.service-item{
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    background: rgba(0,0,0,0.15);
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.02);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.service-item:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 10px 30px rgba(0,210,255,0.06);
+}
+.service-item i{
+    font-size: 1.6rem;
+    color: var(--neon-color);
+    min-width: 40px;
     text-align: center;
 }
-
-.service-box p {
-    color: #ccc;
-    font-size: 1.1rem;
-    max-width: 800px;
-    text-align: left;
+.service-body h4{
+    margin: 0 0 4px 0;
+    color: #e6f7ff;
+    font-size: 1.05rem;
 }
+.service-body p{
+    margin: 0;
+    color: #bfcbd3;
+    font-size: 0.92rem;
+}
+
+.service-deco{
+    display:flex;
+    gap:10px;
+    justify-content:flex-end;
+    flex-wrap:wrap;
+}
+.tag{
+    display:inline-block;
+    padding:6px 10px;
+    border-radius:999px;
+    background: linear-gradient(90deg, rgba(0,210,255,0.04), rgba(255,255,255,0.01));
+    color: var(--neon-color);
+    border: 1px solid rgba(0,210,255,0.12);
+    font-weight:700;
+    font-size:0.92rem;
+    box-shadow: 0 8px 30px rgba(0,210,255,0.03);
+}
+
+.service-header{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    align-items:flex-end;
+}
+.service-header h3{ letter-spacing: 0.6px; }
+
+@media(min-width:900px){
+    .service-box{ grid-template-columns: 1fr; }
+    .service-list{ max-height: 420px; overflow: auto; }
+}
+
+@media (min-width: 1200px) {
+    .service-box{
+        grid-template-columns: 1fr;
+        padding: 42px;
+        border-radius: 26px;
+        gap: 26px;
+    }
+
+    .service-box::before{
+        content: "";
+        position: absolute;
+        right: -40px;
+        bottom: -20px;
+        width: 360px;
+        height: 360px;
+        background: radial-gradient(circle at 30% 30%, rgba(0,210,255,0.06), transparent 40%);
+        filter: blur(36px);
+        pointer-events: none;
+        transform: rotate(6deg);
+        z-index: 0;
+    }
+
+    .service-box > *{ position: relative; z-index: 2; }
+
+    .service-header h3{ font-size: 2.1rem; }
+    .service-sub{ font-size: 1.04rem; }
+
+    .service-list{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+    }
+
+    .service-item{ padding: 16px; }
+    .service-item i{ font-size: 1.9rem; min-width: 48px; }
+
+}
+
 
 /* حاوية قسم المشاريع */
 .projects-section {
