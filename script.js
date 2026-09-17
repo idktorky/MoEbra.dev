@@ -58,11 +58,10 @@ magneticBtns.forEach(btn => {
         const x = e.clientX - rect.left - rect.width / 2;
         const y = e.clientY - rect.top - rect.height / 2;
 
-        // تحريك الزرار بنسبة 30% من حركة الماوس (عشان ما يهربش بعيد)
         this.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
     });
 
-    // يرجع الزرار مكانه أول ما الماوس يبعد
+    
     btn.addEventListener('mouseleave', function() {
         this.style.transform = `translate(0px, 0px)`;
     });
@@ -74,14 +73,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
-            // 1. إزالة كلاس active من الزر النشط حالياً وإضافته للزر المكبوس
+            
             document.querySelector('.filter-btn.active').classList.remove('active');
             button.classList.add('active');
 
-            // 2. جلب نوع الفلتر المختار
+            
             const filterValue = button.getAttribute('data-filter');
 
-            // 3. فلترة الكروت بناءً على الكلاس الخاص بها
+            
             projectCards.forEach(card => {
                 if (filterValue === 'all' || card.classList.contains(filterValue)) {
                     card.classList.remove('hide');

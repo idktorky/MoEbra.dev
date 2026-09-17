@@ -75,7 +75,7 @@
     border: 2px solid #00d2ff;
 }
 
-/* تنسيق موحد لكل زراير الهيدر */
+
 .nav-actions {
     visibility: hidden !important; 
     display: flex;
@@ -84,7 +84,7 @@
     right: 30px;
     top: 25px;
     z-index: 1000;
-    flex-wrap: wrap; /* عشان لو الشاشة صغرت ينزلوا سطر جديد وما يدخلوش في بعض */
+    flex-wrap: wrap; 
 }
 
 .nav-btn {
@@ -107,11 +107,11 @@
     color: #fff;
 }
 
-/* ألوان مخصصة لكل زرار */
 
-/* 1. الداشبورد (بنفسجي نيون) */
+
+
 .dashboard-btn {
-    visibility: hidden !important; /* تأكيد ظهور الزرار */
+    visibility: hidden !important; 
     align-items: center;
     gap: 8px;
     color: #a855f7;
@@ -120,11 +120,11 @@
 }
 
 .dashboard-btn i {
-    visibility: hidden !important; /* تأكيد إخفاء الأيقونة */
+    visibility: hidden !important; 
     visibility: visible !important;
 }
 
-/* 2. العقارات (ذهبي ملكي) */
+
 .realestate-btn {
     color: #d4af37;
     background: rgba(212, 175, 55, 0.05);
@@ -135,7 +135,7 @@
     box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
 }
 
-/* 3. اللينكات (أزرق نيون) */
+
 .links-hub-btn {
     color: #00d2ff;
     background: rgba(0, 210, 255, 0.05);
@@ -146,7 +146,7 @@
     box-shadow: 0 0 15px rgba(0, 210, 255, 0.5);
 }
 
-/* 4. المتجر (برتقالي نيون) */
+
 .store-btn {
     color: #ff6600;
     background: rgba(255, 102, 0, 0.05);
@@ -157,7 +157,7 @@
     box-shadow: 0 0 15px rgba(255, 102, 0, 0.5);
 }
 
-/* إضافة الأنيمايشن (Pulse) لكل الأيقونات */
+
 .nav-btn i {
     animation: iconPulse 2s infinite ease-in-out;
 }
@@ -167,10 +167,10 @@
     50% { transform: scale(1.2); }
 }
 
-/* للموبايل */
+
 @media (max-width: 900px) {
     .nav-actions { right: 10px; top: 10px; gap: 8px; }
-    .nav-btn span { display: none; } /* يظهر الأيقونات بس في الموبايل عشان الزحمة */
+    .nav-btn span { display: none; } 
     .nav-btn { padding: 10px; }
 }
 
@@ -854,22 +854,32 @@ html{
 }
 
 
-/* حاوية قسم المشاريع */
+
 .projects-section {
     padding: 100px 0;
-    background: linear-gradient(to bottom, #0f0f0f 0%, #0a1118 50%, #1a2332 100%); /* smooth transition to contact section */
+    background: linear-gradient(to bottom, #0f0f0f 0%, #0a1118 50%, #1a2332 100%); 
     position: relative;
     padding-bottom: 150px;
 }
 
-/* شبكة عرض المشاريع */
+
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* ضبط مرن ومناسب للشاشات */
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+    gap: 40px;
 }
 
-/* كارت المشروع المعدل */
+.editing-showcase {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+    margin: 30px 0 40px;
+}
+
+.editing-video-card .project-img {
+    height: 300px;
+}
+
 .project-card {
     background: rgba(255, 255, 255, 0.03);
     border-radius: 20px;
@@ -881,17 +891,17 @@ html{
                 border-color 0.4s;
 }
 
-/* تأثير عند تمرير الماوس على الكارت (يرتفع ويوهج باللبني) */
+
 .project-card:hover {
     transform: translateY(-10px);
     border-color: rgba(0, 210, 255, 0.3);
     box-shadow: 0 15px 35px rgba(0, 210, 255, 0.15);
 }
 
-/* حاوية الصورة */
+
 .project-img {
     position: relative;
-    height: 240px; /* زيادة الارتفاع قليلاً ليعطي مساحة تفاصيل أكبر */
+    height: 240px; 
     overflow: hidden;
 }
 
@@ -903,10 +913,10 @@ html{
 }
 
 .project-card:hover .project-img img {
-    transform: scale(1.08); /* زوم خفيف وناعم */
+    transform: scale(1.08); 
 }
 
-/* الـ Overlay الاحترافي الجديد (تدرج غامق سينمائي بدلاً من اللون المصمت) */
+
 .project-overlay {
     position: absolute;
     top: 0;
@@ -928,7 +938,7 @@ html{
     opacity: 1;
 }
 
-/* تنسيق الـ Tags لو كنت مستخدمها داخل الـ Overlay */
+
 .project-tags {
     display: flex;
     gap: 8px;
@@ -946,7 +956,7 @@ html{
     border: 1px solid rgba(0, 210, 255, 0.2);
 }
 
-/* زرار العرض (View Button) بشكل متناسق مع النيون */
+
 .view-btn {
     padding: 12px 28px;
     background: #00d2ff;
@@ -968,28 +978,28 @@ html{
     transform: scale(1.05);
 }
 
-/* معلومات المشروع أسفل الكارت */
+
 .project-info {
     padding: 25px 20px;
     text-align: right;
-    background: rgba(10, 17, 24, 0.5); /* عزل خفيف لمنطقة النصوص */
+    background: rgba(10, 17, 24, 0.5); 
 }
 
 .project-info h3 {
-    color: #fff; /* جعل العنوان باللون الأبيض ليكون مريحاً ومستقراً */
+    color: #fff; 
     font-size: 1.25rem;
     margin-bottom: 8px;
     font-weight: 600;
     transition: color 0.3s;
 }
 
-/* عند تمرير الماوس على الكارت، يضيء عنوان المشروع باللبني */
+
 .project-card:hover .project-info h3 {
     color: #00d2ff;
 }
 
 .project-info p {
-    color: #9ca3af; /* درجة رمادي ناعمة ومريحة للعين */
+    color: #9ca3af; 
     font-size: 0.88rem;
     line-height: 1.6;
     margin: 0;
@@ -1058,7 +1068,7 @@ html{
     transition: 0.3s;
 }
 
-/* حركة الإضاءة عند الكتابة */
+
 .input-group input:focus, .input-group textarea:focus {
     border-color: #00d2ff;
     background: rgba(0, 210, 255, 0.05);
@@ -1114,7 +1124,7 @@ html{
     transform: translateY(0);
 }
 
-/* تنسيق معلومات التواصل */
+
 .contact-info .info-item {
     display: flex;
     align-items: center;
@@ -1148,17 +1158,17 @@ html{
     transform: scale(1.2);
 }
 
-/* حاوية أزرار الفلترة */
+
 .filter-buttons {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 15px;
-    margin: -10px 0 40px 0; /* متناسقة أسفل عنوان القسم */
+    margin: -10px 0 40px 0; 
     flex-wrap: wrap;
 }
 
-/* تصميم الأزرار الاحترافي */
+
 .filter-btn {
     background: linear-gradient(135deg, rgba(255,255,255,0.02), rgba(0,210,255,0.03));
     color: #dbefff;
@@ -1175,7 +1185,7 @@ html{
     box-shadow: 0 6px 18px rgba(2,6,23,0.6);
 }
 
-/* تأثير الـ Hover وعندما يكون الزر نشطاً */
+
 .filter-btn::after{
     content: "";
     position: absolute;
@@ -1191,7 +1201,7 @@ html{
 
 .filter-btn:hover{
     transform: translateY(-4px) scale(1.02);
-    color: #dbefff; /* keep light text on hover so it remains visible */
+    color: #dbefff; 
     box-shadow: 0 10px 30px rgba(0,210,255,0.12);
 }
 
@@ -1217,7 +1227,94 @@ html{
     box-shadow: 0 0 0 4px rgba(0,210,255,0.08);
 }
 
-/* كلاس الإخفاء للمشاريع غير المحددة */
+
 .project-card.hide {
     display: none !important;
+}
+
+.music-section {
+    background: linear-gradient(180deg, #1a2332 0%, #121b2b 50%, #1a2332 100%);
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.music-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(0, 210, 255, 0.18), transparent 35%);
+    pointer-events: none;
+}
+
+.music-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.music-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 24px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.music-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(0, 210, 255, 0.35);
+}
+
+.music-cover {
+    width: 100%;
+    height: 170px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, rgba(0, 210, 255, 0.2), rgba(135, 206, 250, 0.05));
+    border: 1px solid rgba(0, 210, 255, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+}
+
+.music-cover i {
+    font-size: 3rem;
+    color: #00d2ff;
+}
+
+.music-info {
+    margin-bottom: 16px;
+}
+
+.music-info h3 {
+    color: #fff;
+    font-size: 1.3rem;
+    margin-bottom: 6px;
+}
+
+.music-info p {
+    color: #b7c5d6;
+    font-size: 0.9rem;
+}
+
+.music-card audio {
+    width: 100%;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.2);
+    outline: none;
+}
+
+@media (max-width: 768px) {
+    .editing-showcase {
+        grid-template-columns: 1fr;
+    }
+
+    .editing-video-card .project-img {
+        height: 260px;
+    }
 }
